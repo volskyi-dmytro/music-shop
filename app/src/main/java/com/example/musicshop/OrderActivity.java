@@ -41,11 +41,11 @@ public class OrderActivity extends AppCompatActivity {
     }
 
     public void sendOrderByEmail(View view) {
-        Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("*/*");
         intent.putExtra(Intent.EXTRA_EMAIL, addresses);
-        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
-        intent.putExtra(Intent.EXTRA_TEXT, emailText);
+        intent.putExtra(Intent.EXTRA_SUBJECT, emailText);
+        //intent.putExtra(Intent.EXTRA_STREAM, emailText);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }

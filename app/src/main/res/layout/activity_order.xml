@@ -18,6 +18,7 @@
         android:textStyle="bold" />
 
     <Button
+        android:text="Send Order"
         android:layout_marginTop="20dp"
         android:onClick="sendOrderByEmail"
         android:layout_width="match_parent"
